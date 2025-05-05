@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduHub - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .subject-card {
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            border-radius: 0.75rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .subject-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgb(2, 2, 77);">
+        <div class="container">
+            <a class="navbar-brand fw-bold me-4" href="#">EduHub</a>
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center ms-auto">
+                    <form class="d-flex me-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                    <a class="btn btn-light ms-2" href="#login">Login</a>
+                    <a class="btn btn-outline-light ms-2" href="#register">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-5 bg-light text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Welcome to EduHub</h1>
+            <p class="lead">Welcome to EduHub, your premier online resource for WAEC and JAMB preparation in Nigeria. Our mission is to provide high-quality study materials, practice questions, and expert guidance to help students achieve academic excellence and gain admission into their desired universities.</p>
+            <div class="row mt-4">
+                <div class="col-md-6 mb-3">
+                    <img src="res/student.avif" alt="Students Learning" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <img src="res/teacher.webp" alt="Certified Teacher" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BFF Section -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="fw-bold">Best Friends Forever</h2>
+            <p class="lead">Join a community where learning is fun and success is shared.</p>
+        </div>
+    </section>
+
+    <!-- Subject Cards -->
+    <section class="py-5">
+        <div class="container">
+            <h3 class="fw-bold text-center mb-4">Explore Subjects</h3>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-primary">
+                        <i class="bi bi-book" style="font-size: 2rem;"></i>
+                        <span class="fw-bold mt-2">Mathematics</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-success">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">English</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-info">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Physics</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-warning">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Chemistry</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-secondary">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Biology</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-danger">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Economics</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-dark">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Government</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-primary">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Literature</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-success">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Accounting</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-info">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Geography</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-primary">
+                        <i class="bi bi-book" style="font-size: 2rem;"></i>
+                        <span class="fw-bold mt-2">Further Mathematics</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="subject-card bg-danger">
+                        <i class="bi bi-book"></i>
+                        <span class="fw-bold mt-2">Agriculture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=" py-4 mt-5" style="background: rgb(114, 114, 117);">
+        <div class="container text-center">
+            <p class="mb-1">&copy; 2025 EduHub. Empowering Students Every Step of the Way.</p>
+            <div class="row mt-3">
+                <div class="col-md-4 mb-2">
+                    <h6 class="fw-bold">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-decoration-none">Home</a></li>
+                        <li><a href="#about" class="text-decoration-none">About</a></li>
+                        <li><a href="#services" class="text-decoration-none">Services</a></li>
+                        <li><a href="#programs" class="text-decoration-none">Programs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <h6 class="fw-bold">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#past-questions" class="text-decoration-none">Past Questions</a></li>
+                        <li><a href="#practice-tests" class="text-decoration-none">Practice Tests</a></li>
+                        <li><a href="#study-tips" class="text-decoration-none">Study Tips</a></li>
+                        <li><a href="#dashboard" class="text-decoration-none">Student Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <h6 class="fw-bold">Contact Us</h6>
+                    <p>Email: support@eduhub.ng</p>
+                    <p>Phone: +234 800 123 4567</p>
+                    <div>
+                        <a href="#" class="text-decoration-none me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-decoration-none me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-decoration-none me-2"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
