@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f4f6f9;
+    }
+    .sidebar {
+      height: 100vh;
+      background-color: #1c2833;
+      color: white;
+      padding-top: 20px;
+      transition: all 0.3s ease;
+    }
+    .sidebar a {
+      color: white;
+      display: block;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-style: italic;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .sidebar a:hover {
+      background-color: #2e4053;
+    }
+    .sidebar.collapsed {
+      width: 70px;
+    }
+    .sidebar.collapsed a span {
+      display: none;
+    }
+    .subject-card {
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      height: 150px;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    .subject-card:hover {
+      transform: scale(1.05);
+    }
+    .btn-custom, .btn, .dropdown-toggle {
+      margin-top: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .progress-section, .attempts-section, .activity-section {
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      background-color: #2f2f2f0e;
+      border-radius: 8px;
+    }
+    .profile-img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .progress-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 8px solid #ddd;
+      position: relative;
+      margin: 0 auto 20px;
+    }
+    .progress-circle .value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+    }
+    .circle-wrapper {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .navbar {
+      background-color: #154360 !important;
+    }
+    .navbar .navbar-brand, .navbar .me-2, .navbar .dropdown-toggle {
+      color: white !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar p-3 sticky-top">
+      <button class="btn btn-dark mb-4" onclick="toggleSidebar()">
+        <i class="bi bi-list"></i>
+      </button>
+      <a href="dashboard.html" class="bg-light text-dark"><i class="bi bi-house-door-fill"></i> <span>Dashboard (Live)</span></a>
+      <a href="purchase.html"><i class="bi bi-cart"></i> <span>Purchase Subjects</span></a>
+
+      <a href="#"><i class="bi bi-journal-text"></i> <span>Registered Subjects</span></a>
+      <!-- <div class="mt-auto">
+        <a href="#" class="mt-5"><i class="bi bi-box-arrow-right"></i> <span>Logout</span></a>
+      </div> -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-grow-1">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg shadow-sm px-4 sticky-top">
+        <a class="navbar-brand" href="#">MyEduLogo</a>
+        <div class="ms-auto d-flex align-items-center">
+          <span class="me-2">Durotola Samuel</span>
+          <img src="res/student.jpg" alt="Profile" class="profile-img me-3">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="index.html">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Content -->
+      <div class="container py-4">
+        <!-- Subject Cards -->
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <a href="#" class="text-decoration-none">
+              <div class="card subject-card text-white bg-primary text-center d-flex align-items-center justify-content-center">
+                Mathematics
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="#" class="text-decoration-none">
+              <div class="card subject-card text-white bg-success text-center d-flex align-items-center justify-content-center">
+                English
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="#" class="text-decoration-none">
+              <div class="card subject-card text-white bg-danger text-center d-flex align-items-center justify-content-center">
+                Biology
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a href="#" class="text-decoration-none">
+              <div class="card subject-card text-white bg-warning text-center d-flex align-items-center justify-content-center">
+                Chemistry
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Student Progress (Circle) -->
+        <div class="progress-section mt-5">
+          <h5>Student Progress</h5>
+          <div class="circle-wrapper">
+            <div class="text-center">
+              <div class="progress-circle" style="border-color:#0d6efd">
+                <div class="value">75%</div>
+              </div>
+              <small>Mathematics</small>
+            </div>
+            <div class="text-center">
+              <div class="progress-circle" style="border-color:#198754">
+                <div class="value">60%</div>
+              </div>
+              <small>English</small>
+            </div>
+            <div class="text-center">
+              <div class="progress-circle" style="border-color:#dc3545">
+                <div class="value">85%</div>
+              </div>
+              <small>Biology</small>
+            </div>
+            <div class="text-center">
+              <div class="progress-circle" style="border-color:#ffc107">
+                <div class="value">40%</div>
+              </div>
+              <small>Chemistry</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Last Scores and Weekly Activity -->
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="attempts-section">
+              <h5>Last Scores</h5>
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Mathematics</span> <span>85%</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>English</span> <span>78%</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Biology</span> <span>90%</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Chemistry</span> <span>65%</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="activity-section">
+              <h5>Weekly Activity</h5>
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Monday</span> <span>1h 15min</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Tuesday</span> <span>45min</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Wednesday</span> <span>1h 30min</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Thursday</span> <span>50min</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Friday</span> <span>1h</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+  </script>
+
+
+
+</body>
+</html>
